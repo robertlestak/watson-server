@@ -1,0 +1,19 @@
+{
+  "name": "watson-server",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node src/index",
+    "migrate": "node migrations",
+    "config": "node build/config"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "dotenv": "^4.0.0",
+    "express": "^4.16.2",
+    "fs": "^0.0.1-security",
+    "http": "^0.0.0",
+    "path": "^0.12.7",
+    "pg": "^7.4.0"
+  }
+}

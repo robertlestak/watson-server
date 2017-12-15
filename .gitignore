@@ -1,0 +1,4 @@
+node_modules
+.env
+build/deploy.sh
+docker-compose.proxy.yml

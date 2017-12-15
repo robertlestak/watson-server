@@ -1,0 +1,4 @@
+CREATE TABLE users (
+  id SERIAL,
+  token VARCHAR(400) NOT NULL
+)
