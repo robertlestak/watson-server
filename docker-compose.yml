@@ -5,13 +5,25 @@ services:
     image: postgres:10
     env_file: .env
     restart: always
+		labels:
+			traefik.enable: "false"
     volumes:
-      - database:/var/lib/postgresql
+      - database:/var/lib/postgresql/data
 
   api:
-    build: .
+		build: .
     env_file: .env
+		expose:
+			- "5432"
+	  labels:
+      traefik.frontend.rule: "Host: watson.${HOST_DOMAIN}"
+      traefik.backend: "watson"
+      traefik.docker.network: "web"	
     restart: always
 
 volumes:
   database:
+
+# networks:
+# 	web:
+# 		external: true
